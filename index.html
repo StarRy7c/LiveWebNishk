@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Iframe Switcher</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #contentFrame {
+            width: 100%;
+            height: 85vh;
+            border: none;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        .button-54 {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(45deg, #ff0047, #6a00ff);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            margin: 5px;
+        }
+        .button-54:hover {
+            background: linear-gradient(45deg, #ff7a7a, #8c7aff);
+            transform: scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button-54" onclick="changeIframe('https://live.starsports.news/lunar-ipl-hindi')">Hindi</button>
+        <button class="button-54" onclick="changeIframe('https://live.starsports.news/lunar-ipl-eng')">English</button>
+        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/p1/?id=Hindi')">Hindi 2</button>
+        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/play/?id=H2')">Hindi 3</button>
+        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/p/?id=Fox')">Fox</button>
+    </div>
+    
+    <iframe id="contentFrame" src="https://live.starsports.news/lunar-ipl-hindi" allowfullscreen></iframe>
+    
+    <script>
+        function changeIframe(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+    </script>
+</body>
+</html>
