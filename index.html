@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Iframe Switcher</title>
+    <title>Live IPL Streaming</title>
     <style>
         body, html {
             margin: 0;
@@ -12,50 +12,68 @@
             font-family: Arial, sans-serif;
         }
         #contentFrame {
-            width: 100%;
-            height: 85vh;
+            width: 80%;
+            height: 45vw; /* 16:9 aspect ratio */
+            max-height: 500px; /* Limits max height */
             border: none;
+            margin-top: 20px;
         }
         .button-container {
-            margin: 20px 0;
+            margin-top: 20px;
         }
         .button-54 {
-            font-family: "Open Sans", sans-serif;
             font-size: 16px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #fff;
-            background: linear-gradient(45deg, #ff0047, #6a00ff);
-            border: none;
             padding: 10px 20px;
+            margin: 5px;
+            border: none;
             border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            background: linear-gradient(45deg, #ff0047, #6a00ff);
             transition: all 0.3s ease-in-out;
-            margin: 5px;
         }
         .button-54:hover {
             background: linear-gradient(45deg, #ff7a7a, #8c7aff);
             transform: scale(1.1);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
 <body>
+
+    <h2>IPL 2025 Live Streaming</h2>
+    
+    <iframe id="contentFrame" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+
+    <p>Please be patient, the video might take some time to load 🔍.</p>
+
     <div class="button-container">
         <button class="button-54" onclick="changeIframe('https://live.starsports.news/lunar-ipl-hindi')">Hindi</button>
         <button class="button-54" onclick="changeIframe('https://live.starsports.news/lunar-ipl-eng')">English</button>
-        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/p1/?id=Hindi')">Hindi 2</button>
-        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/play/?id=H2')">Hindi 3</button>
+        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/play/?id=H2')">Hindi 2</button>
+        <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/play/?id=H1')">Hindi 3</button>
         <button class="button-54" onclick="changeIframe('https://cxh.pages.dev/p/?id=Fox')">Fox</button>
     </div>
-    
-    <iframe id="contentFrame" src="https://live.starsports.news/lunar-ipl-hindi" allowfullscreen></iframe>
-    
+
+    <p>Open links in Chrome browser ONLY</p>
+
+    <div>
+        <button class="button-54">
+            <a href="https://t.me/+z-p9pYZ3WXs0MGE1" target="_blank">Join Telegram</a>
+        </button>
+    </div>
+
     <script>
         function changeIframe(url) {
             document.getElementById('contentFrame').src = url;
         }
+
+        // Set the default iframe source
+        document.getElementById('contentFrame').src = "https://live.starsports.news/lunar-ipl-hindi";
     </script>
+
 </body>
 </html>
